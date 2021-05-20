@@ -1,16 +1,14 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
+gem 'active_model_serializers'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # gem 'sqlite3'
 gem 'mysql2'
 gem 'puma', '~> 3.7'
+gem 'rack-cors'
+gem 'docx'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
