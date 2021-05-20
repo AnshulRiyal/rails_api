@@ -3,7 +3,7 @@ module Api
     class ArticlesController < ApplicationController
       def index
         articles = Article.order('created_at DESC');
-        render json: {status: 'SUCCESS', message:'Loaded articles', data:articles},status: :ok
+        render json: articles
       end
 
       def show
@@ -39,7 +39,7 @@ module Api
       private
 
       def article_params
-        params.permit(:title, :body)
+        params.permit(:title, :body, :user_id)
       end
     end
   end
